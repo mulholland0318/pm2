@@ -194,9 +194,9 @@ $pm2 kill
 $pm2 resurrect
 spec "Should resurect all apps"
 
-sleep 0.5
+sleep 0.8
 OUT=`$pm2 jlist | grep -o "restart_time" | wc -l`
-[ $OUT -eq 9 ] || fail "Not valid process number"
+[ $OUT -eq 9 ] || fail "Not valid process number (expect 9, got $OUT)"
 success "Processes valid"
 
 $pm2 stopAll
